@@ -8,15 +8,12 @@
     $plg=mysqli_fetch_array($hasil);
     $pelanggan = $plg['pelanggan'];
     $lokasi = $plg['lokasi'];
-    $area = 'palembang';
     $provider = $plg['provider'];
     $no_kartu= $plg['no_kartu'];
     $jenis_provider= $plg['jenis_provider'];
     $status_layanan= $plg['status_layanan'];
     $perangkat= $plg['perangkat'];
-    $awal_pengisian= $plg['awal_pengisian'];;
-    $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
-    $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
+    $awal_pengisian= $plg['awal_pengisian'];
     $status= $plg['status'];
 ?>
 
@@ -91,7 +88,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="plg_simpan.php" method="POST">
+                    <form role="form" action="ubah.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -141,8 +138,8 @@
                         <div class="col-md-9 select mb-3">
                            <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
 
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
+                            <option <?php echo ($jenis_provider == 'Pascabayar') ? "selected": "" ?>>Pascabayar</option>
+                            <option <?php echo ($jenis_provider == 'Prabayar') ? "selected": "" ?>>Prabayar</option>
                             
 
                           </select>
@@ -184,7 +181,8 @@
                        
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input type="date" class="form-control">
+                          <input type="date" class="form-control"
+                          value="<?php echo $awal_pengisian; ?>">
                         </div>
                       </div>
                     </span>
