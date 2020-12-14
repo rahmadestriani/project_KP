@@ -4,7 +4,7 @@
 	$no_jaringan = $_POST['no_jaringan'];
 	$pelanggan = $_POST['pelanggan'];
 	$lokasi = $_POST['lokasi'];
-	$area = 'jambi';
+	$area = 'lampung';
 	$provider = $_POST['provider'];
 	$no_kartu= $_POST['no_kartu'];
 	$jenis_provider= $_POST['jenis_provider'];
@@ -22,5 +22,5 @@
 	if (!$hasil){
 		die("Penyimpanan gagal!!!");
 	}
-	header('location:jambi.php');
+	header('location:lampung.php');
 ?>
