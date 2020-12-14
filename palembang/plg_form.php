@@ -99,13 +99,11 @@
                             <option value="Telkomsel">Telkomsel</option>
                             <option value="XL">XL</option>
                             <option value="Indosat">Indosat</option>
-                            <option value="Smartfren">Smartfren</option>
-                            <option value="Tri">Tri</option>
                           </select>
                         </div>
                     </div>
 
-					<div class="form-group row">
+          <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
                           <input name="no_kartu" type="text" class="form-control">
@@ -117,13 +115,11 @@
                         <label class="col-md-3 form-control-label">Jenis Provider</label>
                         <div class="col-md-9 select mb-3">
                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
+                            
                             <option value="Pascabayar">Pascabayar</option>
                             <option value="Prabayar">Prabayar</option>
-                            
 
                           </select>
-
                         </div></div>
 
                       <div class="form-group row">
@@ -156,18 +152,17 @@
                             <option value="Standby">Standby</option>
                           </select>
                     </div>
-                	</div>
+                  </div>
 
                   <span id="tampil_tanggal" style="display: none;">
                   <div class="form-group row">
-                       
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input type="date" class="form-control">
+                          <input name="awal_pengisian" type="date" class="form-control" value="NULL">
                         </div>
-                      </div>
-                      </span>
-               
+                  </div>
+                  </span>
+
                         <center>
                           <a href="palembang.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
@@ -176,7 +171,7 @@
                     </form>
                 </div>
               </div>
-              </div>	
+              </div>  
         </section>
 
            

@@ -105,8 +105,8 @@
                           <td><?php echo $plg['jenis_provider']; ?></td>
                           <td><?php echo $plg['status_layanan']; ?></td>
                           <td><?php echo $plg['perangkat']; ?></td>
-                          <td><?php echo date('d-m-Y', strtotime($plg['awal_pengisian'])); ?></td>
-                          <td><?php echo date('d-m-Y', strtotime($plg['masa_aktif'])); ?></td>
+                          <td><?php echo $plg['awal_pengisian']; ?></td>
+                          <td><?php echo $plg['masa_aktif']; ?></td>
                           <td><?php echo $plg['status']; ?></td>
                           <td width="45">
                             <a href="plg_ubah.php?no_jaringan=<?php echo $plg['no_jaringan']; ?>">

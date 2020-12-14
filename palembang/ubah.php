@@ -4,7 +4,6 @@
 	$no_jaringan = $_POST['no_jaringan'];
 	$pelanggan = $_POST['pelanggan'];
 	$lokasi = $_POST['lokasi'];
-	$area = 'palembang';
 	$provider = $_POST['provider'];
 	$no_kartu= $_POST['no_kartu'];
 	$jenis_provider= $_POST['jenis_provider'];
@@ -21,11 +20,11 @@
 	$status= $_POST['status'];
 
 
-	$query = "INSERT INTO rekap_kartu (`no_jaringan`,`pelanggan`,`lokasi`,`area`,`provider`,`no_kartu`,`jenis_provider`,`status_layanan`,`perangkat`,`awal_pengisian`,`masa_aktif`,`status`) VALUES ('$no_jaringan','$pelanggan','$lokasi','$area','$provider','$no_kartu','$jenis_provider','$status_layanan','$perangkat','$awal_pengisian','$masa_aktif','$status')";
+	$query = "UPDATE rekap_kartu SET `pelanggan`='$pelanggan',`lokasi`='$lokasi',`provider`='$provider',`no_kartu`='$no_kartu',`jenis_provider`='$jenis_provider',`status_layanan`='$status_layanan',`perangkat`='$perangkat',`awal_pengisian`='$awal_pengisian',`masa_aktif`='$masa_aktif',`status`='$status' WHERE `no_jaringan`='$no_jaringan'";
 	$hasil = mysqli_query ($koneksi,$query);
 
 	if (!$hasil){
-		die("Penyimpanan gagal!!!");
+		die("Pengubahan gagal!!!");
 	}
 	header('location:palembang.php');
 ?>
