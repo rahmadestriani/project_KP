@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Google fonts - Popppins for copy-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
     <!-- orion icons-->
-    <link rel="stylesheet" href="css/orionicons.css">
+    <link rel="stylesheet" href="../css/orionicons.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png?3">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -65,29 +65,29 @@
             <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="h6 text-uppercase mb-0">All form elements</h3>
+                    <h3 class="h6 text-uppercase mb-0">Data Kartu Pelanggan</h3>
                   </div>
                   <div class="card-body">
 
-                    <form class="form-horizontal">
+                    <form role="form" action="lampung_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control">
+                          <input name="no_jaringan" type="text" class="form-control">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Pelanggan</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control">
+                          <input name="pelanggan" type="text" class="form-control">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Lokasi</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control">
+                          <input name="lokasi" type="text" class="form-control">
                         </div>
                       </div>
 
@@ -95,18 +95,20 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Provider</label>
                         <div class="col-md-9 select mb-3">
-                          <select name="account" class="form-control">
-                            <option>Telkomsel</option>
-                            <option>XL</option>
-                            <option>Indosat</option>
+                          <select name="provider" class="form-control">
+                            <option value="Telkomsel">Telkomsel</option>
+                            <option value="XL">XL</option>
+                            <option value="Indosat">Indosat</option>
+                            <option value="Smartfren">Smartfren</option>
+                            <option value="Tri">Tri</option>
                           </select>
                         </div>
                     </div>
 
-					<div class="form-group row">
+          <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control">
+                          <input name="no_kartu" type="text" class="form-control">
                         </div>
                       </div>
 
@@ -114,18 +116,22 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Jenis Provider</label>
                         <div class="col-md-9 select mb-3">
-                          <select name="account" class="form-control">
-                            <option>Prabayar</option>
-                            <option>Pascabayar</option>
+                          <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
+
+                            <option value="Pascabayar">Pascabayar</option>
+                            <option value="Prabayar">Prabayar</option>
+                            
+
                           </select>
+
                         </div></div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
                         <div class="col-md-9 select mb-3">
-                          <select name="account" class="form-control">
-                            <option>Main</option>
-                            <option>Backup</option>
+                          <select name="status_layanan" class="form-control">
+                            <option value="Main">Main</option>
+                            <option value="Backup">Backup</option>
                           </select>
                         </div></div>
 
@@ -133,35 +139,44 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Perangkat</label>
                         <div class="col-md-9 select mb-3">
-                          <select name="account" class="form-control">
-                            <option>Fortinet</option>
-                            <option>Gazele</option>
-                            <option>Mikrotik</option>
+                          <select name="perangkat" class="form-control">
+                            <option value="Fortinet">Fortinet</option>
+                            <option value="Gazele">Gazele</option>
+                            <option value="Mikrotik">Mikrotik</option>
                           </select>
-                        </div></div>
-                  </form></div>
+                        </div>
+                    </div>
 
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label">Status</label>
+                        <div class="col-md-9 select mb-3">
+                          <select name="status" class="form-control">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Disable">Disable</option>
+                            <option value="Standby">Standby</option>
+                          </select>
+                    </div>
+                  </div>
 
-
-
-                      
-
-                    
- 
-                      </div>
-                      
-                      </div>
-                      <div class="line"></div>
-                      <div class="form-group row">
-                        <div class="col-md-9 ml-auto">
-                          <button type="submit" class="btn btn-secondary">Cancel</button>
-                          <button type="submit" class="btn btn-primary">Save changes</button>
+                  <span id="tampil_tanggal" style="display: none;">
+                  <div class="form-group row">
+                       
+                        <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
+                        <div class="col-md-9">
+                          <input type="date" class="form-control">
                         </div>
                       </div>
+                      </span>
+               
+                        <center>
+                          <a href="lampung.php" class="btn btn-secondary">Cancel</a>
+                          <button type="submit" class="btn btn-success">Save</button>
+                        </center>
+
                     </form>
-                  </div>
                 </div>
-              </div>	
+              </div>
+              </div>  
         </section>
 
            
@@ -181,15 +196,14 @@
           </div>
         </footer>
       </div>
-    </div>
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <script src="js/front.js"></script>
+    <script src="../js/charts-home.js"></script>
+    <script src="../js/front.js"></script>
   </body>
 </html>
