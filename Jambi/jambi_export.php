@@ -1,11 +1,8 @@
   
- 
-  <?php
   header("Content-type: application/vnd-ms-excel");
   header("Content-Disposition: attachment; filename=rekap_jambi.xls");
   ?>
 
-   <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
             <center><h2>AREA JAMBI</h2></center>
