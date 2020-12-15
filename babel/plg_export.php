@@ -2,13 +2,13 @@
  
   <?php
   header("Content-type: application/vnd-ms-excel");
-  header("Content-Disposition: attachment; filename=rekap_lampung.xls");
+  header("Content-Disposition: attachment; filename=rekap_palembang.xls");
   ?>
 
    <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <center><h2>AREA BABEL</h2></center>
+            <center><h2>AREA PALEMBANG</h2></center>
             <table class="table table-striped table-bordered table-condensed">
                       <thead>
                         <tr>
@@ -28,9 +28,9 @@
                       </thead>
                       <tbody>
                         <?php
-                        include_once ("koneksi.php");
+                        include_once ("../koneksi.php");
 
-                        $query = "SELECT * FROM rekap_kartu where area='babel'";
+                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
                         $hasil = mysqli_query ($koneksi,$query);
 
                         $no = 1;
@@ -38,22 +38,22 @@
                         if (!$hasil)
                           die ("Permintaan gagal!!!");
 
-                        while ($babel=mysqli_fetch_array($hasil))
+                        while ($plg=mysqli_fetch_array($hasil))
                         {
                         ?>
                         <tr>
                           <td><?php echo $no++?></td>
-                          <td><?php echo $babel['no_jaringan']; ?></td>
-                          <td><?php echo $babel['pelanggan']; ?></td>
-                          <td><?php echo $babel['lokasi']; ?></td>
-                          <td><?php echo $babel['provider']; ?></td>
-                          <td><?php echo $babel['no_kartu']; ?></td>
-                          <td><?php echo $babel['jenis_provider']; ?></td>
-                          <td><?php echo $babel['status_layanan']; ?></td>
-                          <td><?php echo $babel['perangkat']; ?></td>
-                          <td><?php echo $babel['awal_pengisian']; ?></td>
-                          <td><?php echo $babel['masa_aktif']; ?></td>
-                          <td><?php echo $babel['status']; ?></td>
+                          <td><?php echo $plg['no_jaringan']; ?></td>
+                          <td><?php echo $plg['pelanggan']; ?></td>
+                          <td><?php echo $plg['lokasi']; ?></td>
+                          <td><?php echo $plg['provider']; ?></td>
+                          <td><?php echo $plg['no_kartu']; ?></td>
+                          <td><?php echo $plg['jenis_provider']; ?></td>
+                          <td><?php echo $plg['status_layanan']; ?></td>
+                          <td><?php echo $plg['perangkat']; ?></td>
+                          <td><?php echo $plg['awal_pengisian']; ?></td>
+                          <td><?php echo $plg['masa_aktif']; ?></td>
+                          <td><?php echo $plg['status']; ?></td>
                         </tr>
                         <?php
                         }

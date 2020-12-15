@@ -134,7 +134,7 @@
             <div class="row text-dark">
               <div class="col-lg-4 mb-4 mb-lg-0">
                 <br>
-                 <a href="babel/babel.php" class="card bg-hover-gradient-green">
+                 <a href="babel/pilih_prapasca.php" class="card bg-hover-gradient-green">
                   <div class="content d-flex flex-column justify-content-between p-4">
                    
                       <div class="text-uppercase">
