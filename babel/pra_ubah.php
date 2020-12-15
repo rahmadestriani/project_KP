@@ -2,17 +2,20 @@
   include ('../koneksi.php');
   $no_jaringan = $_GET ['no_jaringan'];
 
-    $query = "SELECT * FROM plg_pasca where no_jaringan='$no_jaringan'";
+    $query = "SELECT * FROM babel_pra where no_jaringan='$no_jaringan'";
     $hasil = mysqli_query ($koneksi, $query);
 
-    $plg=mysqli_fetch_array($hasil);
-    $pelanggan = $plg['pelanggan'];
-    $lokasi = $plg['lokasi'];
-    $provider = $plg['provider'];
-    $no_kartu= $plg['no_kartu'];
-    $status_layanan= $plg['status_layanan'];
-    $perangkat= $plg['perangkat'];
-    $status= $plg['status'];
+    $babel=mysqli_fetch_array($hasil);
+    $pelanggan = $babel['pelanggan'];
+    $lokasi = $babel['lokasi'];
+    $provider = $babel['provider'];
+    $no_kartu= $babel['no_kartu'];
+    $status_layanan= $babel['status_layanan'];
+    $perangkat= $babel['perangkat'];
+    $awal_pengisian= $babel['awal_pengisian'];
+    $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
+    $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
+    $status= $babel['status'];
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +71,7 @@
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
               
-              <div class="dropdown"></div><a href="logout.php" class="dropdown-item">Logout</a>
+              <div class="dropdown"></div><a href="../logout.php" class="dropdown-item">Logout</a>
             </div>
           </li>
         </ul>
@@ -78,7 +81,7 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <center><h2>AREA PALEMBANG</h2></center>
+            <center><h2>AREA BABEL</h2></center>
             <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
@@ -86,7 +89,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="pasca_update.php" method="POST">
+                    <form role="form" action="pra_update.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -130,7 +133,6 @@
                         </div>
                       </div>
 
-
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
                         <div class="col-md-9 select mb-3">
@@ -162,9 +164,17 @@
                           </select>
                     </div>
                 	</div>
-              
+
+                  <div class="form-group row">
+                        <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
+                        <div class="col-md-9">
+                        <input name="awal_pengisian" type="date" class="form-control" value="<?php echo $awal_pengisian; ?>">
+                        </div>
+                      </div>
+
+               
                         <center>
-                          <a href="pasca_plg.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pra_babel.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
