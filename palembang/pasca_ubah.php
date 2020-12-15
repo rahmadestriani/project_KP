@@ -90,7 +90,7 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>">
+                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>" readonly>
                         </div>
                       </div>
 
