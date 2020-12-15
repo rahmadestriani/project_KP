@@ -91,6 +91,7 @@
           
           <section class="py-5">
 
+            <center>
             <div class="row text-dark">
               <div class="col-lg-4 mb-4 mb-lg-0">
                 <a href="palembang/palembang.php" class="card bg-hover-gradient-violet">
@@ -103,8 +104,6 @@
                 </a>
               </div>
 
-
-
               <div class="col-lg-4 mb-4 mb-lg-0">
                  <a href="bengkulu.php" class="card bg-hover-gradient-red">
                   <div class="content d-flex flex-column justify-content-between p-4">
@@ -116,6 +115,7 @@
                   </div>
               </a>
               </div>
+
              <div class="col-lg-4 mb-4 mb-lg-0">
                  <a href="jambi.php" class="card bg-hover-gradient-green">
                   <div class="content d-flex flex-column justify-content-between p-4">
@@ -128,7 +128,9 @@
                 </div>
              </a>
             </div>
+            </center>
         
+            <center>
             <div class="row text-dark">
               <div class="col-lg-4 mb-4 mb-lg-0">
                 <br>
@@ -156,6 +158,7 @@
                 </div>
               </a>
             </div>
+            </center>
 
           </section>
         </div>
