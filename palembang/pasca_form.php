@@ -69,7 +69,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="plg_simpan.php" method="POST">
+                    <form role="form" action="pasca_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -99,6 +99,9 @@
                             <option value="Telkomsel">Telkomsel</option>
                             <option value="XL">XL</option>
                             <option value="Indosat">Indosat</option>
+                            <option value="Smartfren">Smartfren</option>
+                            <option value="Tri">Tri</option>
+
                           </select>
                         </div>
                     </div>
@@ -111,16 +114,7 @@
                       </div>
 
 
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                          <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-                            
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-
-                          </select>
-                        </div></div>
+                     
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
@@ -164,7 +158,7 @@
                   </span>
 
                         <center>
-                          <a href="palembang.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pasca_plg.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
