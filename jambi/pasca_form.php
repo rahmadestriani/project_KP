@@ -69,7 +69,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="jambi_simpan.php" method="POST">
+                    <form role="form" action="pasca_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -101,6 +101,7 @@
                             <option value="Indosat">Indosat</option>
                             <option value="Smartfren">Smartfren</option>
                             <option value="Tri">Tri</option>
+
                           </select>
                         </div>
                     </div>
@@ -113,18 +114,7 @@
                       </div>
 
 
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                          <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-                            
-
-                          </select>
-
-                        </div></div>
+                     
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
@@ -160,16 +150,15 @@
 
                   <span id="tampil_tanggal" style="display: none;">
                   <div class="form-group row">
-                       
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input type="date" class="form-control">
+                          <input name="awal_pengisian" type="date" class="form-control" value="NULL">
                         </div>
-                      </div>
-                      </span>
-               
+                  </div>
+                  </span>
+
                         <center>
-                          <a href="jambi.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pasca_jambi.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 

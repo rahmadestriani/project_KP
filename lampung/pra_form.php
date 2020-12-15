@@ -1,25 +1,3 @@
-<?php
-  include ('../koneksi.php');
-  $no_jaringan = $_GET ['no_jaringan'];
-
-    $query = "SELECT * FROM rekap_kartu where no_jaringan='$no_jaringan'";
-    $hasil = mysqli_query ($koneksi, $query);
-
-    $jambi=mysqli_fetch_array($hasil);
-    $pelanggan = $jambi['pelanggan'];
-    $lokasi = $jambi['lokasi'];
-    $area = 'jambi';
-    $provider = $jambi['provider'];
-    $no_kartu= $jambi['no_kartu'];
-    $jenis_provider= $jambi['jenis_provider'];
-    $status_layanan= $jambi['status_layanan'];
-    $perangkat= $jambi['perangkat'];
-    $awal_pengisian= $jambi['awal_pengisian'];;
-    $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
-    $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
-    $status= $jambi['status'];
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -73,7 +51,7 @@
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
               
-              <div class="dropdown"></div><a href="logout.php" class="dropdown-item">Logout</a>
+              <div class="dropdown"></div><a href="../logout.php" class="dropdown-item">Logout</a>
             </div>
           </li>
         </ul>
@@ -83,7 +61,7 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <center><h2>AREA JAMBI</h2></center>
+            <center><h2>AREA LAMPUNG</h2></center>
             <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
@@ -91,26 +69,25 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="jambi_simpan.php" method="POST">
+                   <form role="form" action="pra_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>">
+                          <input name="no_jaringan" type="text" class="form-control">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Pelanggan</label>
                         <div class="col-md-9">
-                          <input name="pelanggan" type="text" class="form-control"
-                          value="<?php echo $pelanggan; ?>">
+                          <input name="pelanggan" type="text" class="form-control">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Lokasi</label>
                         <div class="col-md-9">
-                          <input name="lokasi" type="text" class="form-control" value="<?php echo $lokasi; ?>">
+                          <input name="lokasi" type="text" class="form-control">
                         </div>
                       </div>
 
@@ -119,52 +96,40 @@
                         <label class="col-md-3 form-control-label">Provider</label>
                         <div class="col-md-9 select mb-3">
                           <select name="provider" class="form-control">
-                            <option <?php echo ($provider == 'Telkomsel') ? "selected": "" ?>>Telkomsel</option>
-                            <option <?php echo ($provider == 'XL') ? "selected": "" ?>>XL</option>
-                            <option <?php echo ($provider == 'Indosat') ? "selected": "" ?>>Indosat</option>
-                            <option <?php echo ($provider == 'Smartfren') ? "selected": "" ?>>Smartfren</option>
-                            <option <?php echo ($provider == 'Tri') ? "selected": "" ?>>Tri</option>
+                            <option value="Telkomsel">Telkomsel</option>
+                            <option value="XL">XL</option>
+                            <option value="Indosat">Indosat</option>
+                            <option value="Smartfren">Smartfren</option>
+                            <option value="Tri">Tri</option>
                           </select>
                         </div>
                     </div>
 
-                     <div class="form-group row">
+                      <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
-                          <input name="no_kartu" type="text" class="form-control" value="<?php echo $no_kartu; ?>">
+                          <input name="no_kartu" type="text" class="form-control">
                         </div>
                       </div>
-
-
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-                            
-
-                          </select>
-                        </div></div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
                         <div class="col-md-9 select mb-3">
                           <select name="status_layanan" class="form-control">
-                            <option <?php echo ($status_layanan == 'Main') ? "selected": "" ?>>Main</option>
-                            <option <?php echo ($status_layanan == 'Backup') ? "selected": "" ?>>Backup</option>
+                            <option value="Main">Main</option>
+                            <option value="Backup">Backup</option>
                           </select>
-                        </div></div>
+                        </div>
+                      </div>
 
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Perangkat</label>
                         <div class="col-md-9 select mb-3">
                           <select name="perangkat" class="form-control">
-                            <option <?php echo ($perangkat == 'Fortinet') ? "selected": "" ?>>Fortinet</option>
-                            <option <?php echo ($perangkat == 'Gazele') ? "selected": "" ?>>Gazele</option>
-                            <option <?php echo ($perangkat == 'Mikrotik') ? "selected": "" ?>>Mikrotik</option>
+                            <option value="Fortinet">Fortinet</option>
+                            <option value="Gazele">Gazele</option>
+                            <option value="Mikrotik">Mikrotik</option>
                           </select>
                         </div>
                     </div>
@@ -173,25 +138,22 @@
                         <label class="col-md-3 form-control-label">Status</label>
                         <div class="col-md-9 select mb-3">
                           <select name="status" class="form-control">
-                            <option <?php echo ($status == 'Aktif') ? "selected": "" ?>>Aktif</option>
-                            <option <?php echo ($status == 'Disable') ? "selected": "" ?>>Disable</option>
-                            <option <?php echo ($status == 'Standby') ? "selected": "" ?>>Standby</option>
+                            <option value="Aktif">Aktif</option>
+                            <option value="Disable">Disable</option>
+                            <option value="Standby">Standby</option>
                           </select>
                     </div>
                   </div>
-                  <span id="tampil_tanggal" style="display: none;">
+
                   <div class="form-group row">
-                       
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input type="date" class="form-control">
+                          <input name="awal_pengisian" type="date" class="form-control">
                         </div>
-                      </div>
-                    </span>
+                  </div>
 
-               
                         <center>
-                          <a href="jambi.php" class="btn btn-secondary">Cancel</a>
+                           <a href="pra_lampung.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 

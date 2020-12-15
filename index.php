@@ -117,7 +117,7 @@
               </div>
 
              <div class="col-lg-4 mb-4 mb-lg-0">
-                 <a href="jambi/jambi.php" class="card bg-hover-gradient-green">
+                 <a href="jambi/pilih_prapasca.php" class="card bg-hover-gradient-green">
                   <div class="content d-flex flex-column justify-content-between p-4">
                    
                       <div class="text-uppercase">
@@ -147,7 +147,7 @@
 
               <div class="col-lg-4 mb-4 mb-lg-0">
                 <br>
-                 <a href="lampung/lampung.php" class="card bg-hover-gradient-violet">
+                 <a href="lampung/pilih_prapasca.php" class="card bg-hover-gradient-violet">
                   <div class="content d-flex flex-column justify-content-between p-4">
                    
                       <div class="text-uppercase">
