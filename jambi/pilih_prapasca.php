@@ -64,26 +64,7 @@
             <h2 class="text-center">AREA JAMBI</h2>
             <table class="table table-striped table-bordered table-condensed">
                       
-                      <tbody>
-                        <?php
-                        include_once ("../koneksi.php");
-
-                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
-                        $hasil = mysqli_query ($koneksi,$query);
-
-                        $no = 1;
-
-                        if (!$hasil)
-                          die ("Permintaan gagal!!!");
-
-                        while ($jambi=mysqli_fetch_array($hasil))
-                        {
-                        ?>
-                       
-                        <?php
-                        }
-                        ?>
-                      </tbody>
+                    
             </table>
             <center>
                 <a href="pra_jambi.php" class="btn btn-lg btn-info">Prabayar</a>
