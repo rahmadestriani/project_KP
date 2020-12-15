@@ -2,7 +2,7 @@
  
   <?php
   header("Content-type: application/vnd-ms-excel");
-  header("Content-Disposition: attachment; filename=rekap_lampung.xls");
+  header("Content-Disposition: attachment; filename=rekap_palembang.xls");
   ?>
 
    <div class="page-holder w-100 d-flex flex-wrap">
@@ -28,9 +28,9 @@
                       </thead>
                       <tbody>
                         <?php
-                        include_once ("koneksi.php");
+                        include_once ("../koneksi.php");
 
-                        $query = "SELECT * FROM rekap_kartu where area='bengkulu'";
+                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
                         $hasil = mysqli_query ($koneksi,$query);
 
                         $no = 1;
@@ -38,22 +38,22 @@
                         if (!$hasil)
                           die ("Permintaan gagal!!!");
 
-                        while ($bengkulu=mysqli_fetch_array($hasil))
+                        while ($plg=mysqli_fetch_array($hasil))
                         {
                         ?>
                         <tr>
                           <td><?php echo $no++?></td>
-                          <td><?php echo $bengkulu['no_jaringan']; ?></td>
-                          <td><?php echo $bengkulu['pelanggan']; ?></td>
-                          <td><?php echo $bengkulu['lokasi']; ?></td>
-                          <td><?php echo $bengkulu['provider']; ?></td>
-                          <td><?php echo $bengkulu['no_kartu']; ?></td>
-                          <td><?php echo $bengkulu['jenis_provider']; ?></td>
-                          <td><?php echo $bengkulu['status_layanan']; ?></td>
-                          <td><?php echo $bengkulu['perangkat']; ?></td>
-                          <td><?php echo $bengkulu['awal_pengisian']; ?></td>
-                          <td><?php echo $bengkulu['masa_aktif']; ?></td>
-                          <td><?php echo $bengkulu['status']; ?></td>
+                          <td><?php echo $plg['no_jaringan']; ?></td>
+                          <td><?php echo $plg['pelanggan']; ?></td>
+                          <td><?php echo $plg['lokasi']; ?></td>
+                          <td><?php echo $plg['provider']; ?></td>
+                          <td><?php echo $plg['no_kartu']; ?></td>
+                          <td><?php echo $plg['jenis_provider']; ?></td>
+                          <td><?php echo $plg['status_layanan']; ?></td>
+                          <td><?php echo $plg['perangkat']; ?></td>
+                          <td><?php echo $plg['awal_pengisian']; ?></td>
+                          <td><?php echo $plg['masa_aktif']; ?></td>
+                          <td><?php echo $plg['status']; ?></td>
                         </tr>
                         <?php
                         }
