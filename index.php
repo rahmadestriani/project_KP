@@ -94,7 +94,7 @@
             <center>
             <div class="row text-dark">
               <div class="col-lg-4 mb-4 mb-lg-0">
-                <a href="palembang/pilih_prapasca.php" class="card bg-hover-gradient-violet">
+                <a href="palembang/palembang.php" class="card bg-hover-gradient-violet">
                   <div class="content d-flex flex-column justify-content-between p-4">                   
                       <div class="text-uppercase">
                         <div class="font-weight-bold d-block"><h4>Palembang</h4></div>
