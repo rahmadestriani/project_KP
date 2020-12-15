@@ -61,7 +61,7 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <center><h2>AREA PALEMBANG</h2></center>
+            <center><h2>AREA LAMPUNG</h2></center>
             <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
@@ -69,7 +69,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="plg_simpan.php" method="POST">
+                    <form role="form" action="lampung_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -99,6 +99,8 @@
                             <option value="Telkomsel">Telkomsel</option>
                             <option value="XL">XL</option>
                             <option value="Indosat">Indosat</option>
+                            <option value="Smartfren">Smartfren</option>
+                            <option value="Tri">Tri</option>
                           </select>
                         </div>
                     </div>
@@ -115,11 +117,13 @@
                         <label class="col-md-3 form-control-label">Jenis Provider</label>
                         <div class="col-md-9 select mb-3">
                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-                            
+
                             <option value="Pascabayar">Pascabayar</option>
                             <option value="Prabayar">Prabayar</option>
+                            
 
                           </select>
+
                         </div></div>
 
                       <div class="form-group row">
@@ -156,15 +160,16 @@
 
                   <span id="tampil_tanggal" style="display: none;">
                   <div class="form-group row">
+                       
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input name="awal_pengisian" type="date" class="form-control" value="NULL">
+                          <input type="date" class="form-control">
                         </div>
-                  </div>
-                  </span>
-
+                      </div>
+                      </span>
+               
                         <center>
-                          <a href="palembang.php" class="btn btn-secondary">Cancel</a>
+                          <a href="lampung.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 

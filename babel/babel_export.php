@@ -2,7 +2,7 @@
  
   <?php
   header("Content-type: application/vnd-ms-excel");
-  header("Content-Disposition: attachment; filename=rekap_babel.xls");
+  header("Content-Disposition: attachment; filename=rekap_lampung.xls");
   ?>
 
    <div class="page-holder w-100 d-flex flex-wrap">
@@ -38,22 +38,22 @@
                         if (!$hasil)
                           die ("Permintaan gagal!!!");
 
-                        while ($plg=mysqli_fetch_array($hasil))
+                        while ($babel=mysqli_fetch_array($hasil))
                         {
                         ?>
                         <tr>
                           <td><?php echo $no++?></td>
-                          <td><?php echo $plg['no_jaringan']; ?></td>
-                          <td><?php echo $plg['pelanggan']; ?></td>
-                          <td><?php echo $plg['lokasi']; ?></td>
-                          <td><?php echo $plg['provider']; ?></td>
-                          <td><?php echo $plg['no_kartu']; ?></td>
-                          <td><?php echo $plg['jenis_provider']; ?></td>
-                          <td><?php echo $plg['status_layanan']; ?></td>
-                          <td><?php echo $plg['perangkat']; ?></td>
-                          <td><?php echo $plg['awal_pengisian']; ?></td>
-                          <td><?php echo $plg['masa_aktif']; ?></td>
-                          <td><?php echo $plg['status']; ?></td>
+                          <td><?php echo $babel['no_jaringan']; ?></td>
+                          <td><?php echo $babel['pelanggan']; ?></td>
+                          <td><?php echo $babel['lokasi']; ?></td>
+                          <td><?php echo $babel['provider']; ?></td>
+                          <td><?php echo $babel['no_kartu']; ?></td>
+                          <td><?php echo $babel['jenis_provider']; ?></td>
+                          <td><?php echo $babel['status_layanan']; ?></td>
+                          <td><?php echo $babel['perangkat']; ?></td>
+                          <td><?php echo $babel['awal_pengisian']; ?></td>
+                          <td><?php echo $babel['masa_aktif']; ?></td>
+                          <td><?php echo $babel['status']; ?></td>
                         </tr>
                         <?php
                         }
