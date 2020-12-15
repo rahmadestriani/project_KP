@@ -2,21 +2,16 @@
   include ('../koneksi.php');
   $no_jaringan = $_GET ['no_jaringan'];
 
-    $query = "SELECT * FROM rekap_kartu where no_jaringan='$no_jaringan'";
+    $query = "SELECT * FROM lampung_pasca where no_jaringan='$no_jaringan'";
     $hasil = mysqli_query ($koneksi, $query);
 
     $lampung=mysqli_fetch_array($hasil);
     $pelanggan = $lampung['pelanggan'];
     $lokasi = $lampung['lokasi'];
-    $area = 'lampung';
     $provider = $lampung['provider'];
     $no_kartu= $lampung['no_kartu'];
-    $jenis_provider= $lampung['jenis_provider'];
     $status_layanan= $lampung['status_layanan'];
     $perangkat= $lampung['perangkat'];
-    $awal_pengisian= $lampung['awal_pengisian'];;
-    $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
-    $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
     $status= $lampung['status'];
 ?>
 
@@ -91,11 +86,11 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="lampung_simpan.php" method="POST">
+                    <form role="form" action="pasca_update.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>">
+                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>" readonly>
                         </div>
                       </div>
 
@@ -128,25 +123,13 @@
                         </div>
                     </div>
 
-                     <div class="form-group row">
+					           <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
                           <input name="no_kartu" type="text" class="form-control" value="<?php echo $no_kartu; ?>">
                         </div>
                       </div>
 
-
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-                            
-
-                          </select>
-                        </div></div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
@@ -178,27 +161,17 @@
                             <option <?php echo ($status == 'Standby') ? "selected": "" ?>>Standby</option>
                           </select>
                     </div>
-                  </div>
-                  <span id="tampil_tanggal" style="display: none;">
-                  <div class="form-group row">
-                       
-                        <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
-                        <div class="col-md-9">
-                          <input type="date" class="form-control">
-                        </div>
-                      </div>
-                    </span>
-
-               
+                	</div>
+              
                         <center>
-                          <a href="lampung.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pasca_lampung.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
                     </form>
                 </div>
               </div>
-              </div>  
+              </div>	
         </section>
 
            

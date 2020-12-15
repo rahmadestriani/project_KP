@@ -147,7 +147,7 @@
 
               <div class="col-lg-4 mb-4 mb-lg-0">
                 <br>
-                 <a href="lampung/lampung.php" class="card bg-hover-gradient-violet">
+                 <a href="lampung/pilih_prapasca.php" class="card bg-hover-gradient-violet">
                   <div class="content d-flex flex-column justify-content-between p-4">
                    
                       <div class="text-uppercase">
