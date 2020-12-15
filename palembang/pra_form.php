@@ -69,7 +69,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="plg_simpan.php" method="POST">
+                    <form role="form" action="pra_simpan.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -109,19 +109,7 @@
                           <input name="no_kartu" type="text" class="form-control">
                         </div>
                       </div>
-
-
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                          <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-                            
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-
-                          </select>
-                        </div></div>
-
+                
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
                         <div class="col-md-9 select mb-3">
@@ -154,17 +142,15 @@
                     </div>
                   </div>
 
-                  <span id="tampil_tanggal" style="display: none;">
                   <div class="form-group row">
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
                           <input name="awal_pengisian" type="date" class="form-control" value="NULL">
                         </div>
                   </div>
-                  </span>
 
                         <center>
-                          <a href="palembang.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pra_plg.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
