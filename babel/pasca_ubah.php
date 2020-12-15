@@ -2,21 +2,16 @@
   include ('../koneksi.php');
   $no_jaringan = $_GET ['no_jaringan'];
 
-    $query = "SELECT * FROM rekap_kartu where no_jaringan='$no_jaringan'";
+    $query = "SELECT * FROM babel_pasca where no_jaringan='$no_jaringan'";
     $hasil = mysqli_query ($koneksi, $query);
 
     $babel=mysqli_fetch_array($hasil);
     $pelanggan = $babel['pelanggan'];
     $lokasi = $babel['lokasi'];
-    $area = 'babel';
     $provider = $babel['provider'];
     $no_kartu= $babel['no_kartu'];
-    $jenis_provider= $babel['jenis_provider'];
     $status_layanan= $babel['status_layanan'];
     $perangkat= $babel['perangkat'];
-    $awal_pengisian= $babel['awal_pengisian'];;
-    $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
-    $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
     $status= $babel['status'];
 ?>
 
@@ -59,7 +54,7 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
-        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
+        <a href="index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -83,7 +78,7 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <center><h2>AREA BABEL</h2></center>
+            <center><h2>AREA PALEMBANG</h2></center>
             <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
@@ -91,11 +86,11 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="babel_simpan.php" method="POST">
+                    <form role="form" action="pasca_update.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>">
+                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>" readonly>
                         </div>
                       </div>
 
@@ -128,25 +123,13 @@
                         </div>
                     </div>
 
-                     <div class="form-group row">
+					           <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
                           <input name="no_kartu" type="text" class="form-control" value="<?php echo $no_kartu; ?>">
                         </div>
                       </div>
 
-
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-                            
-
-                          </select>
-                        </div></div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
@@ -178,27 +161,17 @@
                             <option <?php echo ($status == 'Standby') ? "selected": "" ?>>Standby</option>
                           </select>
                     </div>
-                  </div>
-                  <span id="tampil_tanggal" style="display: none;">
-                  <div class="form-group row">
-                       
-                        <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
-                        <div class="col-md-9">
-                          <input type="date" class="form-control">
-                        </div>
-                      </div>
-                    </span>
-
-               
+                	</div>
+              
                         <center>
-                          <a href="babel.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pasca_babel.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
                     </form>
                 </div>
               </div>
-              </div>  
+              </div>	
         </section>
 
            
