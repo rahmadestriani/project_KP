@@ -2,7 +2,7 @@
   include ('../koneksi.php');
   $no_jaringan = $_GET ['no_jaringan'];
 
-    $query = "SELECT * FROM rekap_kartu where no_jaringan='$no_jaringan'";
+    $query = "SELECT * FROM plg_pasca where no_jaringan='$no_jaringan'";
     $hasil = mysqli_query ($koneksi, $query);
 
     $plg=mysqli_fetch_array($hasil);
@@ -10,10 +10,8 @@
     $lokasi = $plg['lokasi'];
     $provider = $plg['provider'];
     $no_kartu= $plg['no_kartu'];
-    $jenis_provider= $plg['jenis_provider'];
     $status_layanan= $plg['status_layanan'];
     $perangkat= $plg['perangkat'];
-    $awal_pengisian= $plg['awal_pengisian'];
     $status= $plg['status'];
 ?>
 
@@ -88,7 +86,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="ubah.php" method="POST">
+                    <form role="form" action="pasca_update.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
@@ -134,18 +132,6 @@
 
 
                       <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option <?php echo ($jenis_provider == 'Pascabayar') ? "selected": "" ?>>Pascabayar</option>
-                            <option <?php echo ($jenis_provider == 'Prabayar') ? "selected": "" ?>>Prabayar</option>
-                            
-
-                          </select>
-                        </div></div>
-
-                      <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
                         <div class="col-md-9 select mb-3">
                           <select name="status_layanan" class="form-control">
@@ -176,20 +162,9 @@
                           </select>
                     </div>
                 	</div>
-                  <span id="tampil_tanggal" style="display: none;">
-                  <div class="form-group row">
-                       
-                        <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
-                        <div class="col-md-9">
-                          <input type="date" class="form-control"
-                          value="<?php echo $awal_pengisian; ?>">
-                        </div>
-                      </div>
-                    </span>
-
-               
+              
                         <center>
-                          <a href="palembang.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pasca_plg.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
