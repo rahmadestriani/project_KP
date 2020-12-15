@@ -2,7 +2,7 @@
  
   <?php
   header("Content-type: application/vnd-ms-excel");
-  header("Content-Disposition: attachment; filename=rekap_lampung.xls");
+  header("Content-Disposition: attachment; filename=rekap_jambi.xls");
   ?>
 
    <div class="page-holder w-100 d-flex flex-wrap">
@@ -28,7 +28,7 @@
                       </thead>
                       <tbody>
                         <?php
-                        include_once ("koneksi.php");
+                        include_once ("../koneksi.php");
 
                         $query = "SELECT * FROM rekap_kartu where area='lampung'";
                         $hasil = mysqli_query ($koneksi,$query);
@@ -38,22 +38,22 @@
                         if (!$hasil)
                           die ("Permintaan gagal!!!");
 
-                        while ($plg=mysqli_fetch_array($hasil))
+                        while ($lampung=mysqli_fetch_array($hasil))
                         {
                         ?>
                         <tr>
                           <td><?php echo $no++?></td>
-                          <td><?php echo $plg['no_jaringan']; ?></td>
-                          <td><?php echo $plg['pelanggan']; ?></td>
-                          <td><?php echo $plg['lokasi']; ?></td>
-                          <td><?php echo $plg['provider']; ?></td>
-                          <td><?php echo $plg['no_kartu']; ?></td>
-                          <td><?php echo $plg['jenis_provider']; ?></td>
-                          <td><?php echo $plg['status_layanan']; ?></td>
-                          <td><?php echo $plg['perangkat']; ?></td>
-                          <td><?php echo $plg['awal_pengisian']; ?></td>
-                          <td><?php echo $plg['masa_aktif']; ?></td>
-                          <td><?php echo $plg['status']; ?></td>
+                          <td><?php echo $lampung['no_jaringan']; ?></td>
+                          <td><?php echo $lampung['pelanggan']; ?></td>
+                          <td><?php echo $lampung['lokasi']; ?></td>
+                          <td><?php echo $lampung['provider']; ?></td>
+                          <td><?php echo $lampung['no_kartu']; ?></td>
+                          <td><?php echo $lampung['jenis_provider']; ?></td>
+                          <td><?php echo $lampung['status_layanan']; ?></td>
+                          <td><?php echo $lampung['perangkat']; ?></td>
+                          <td><?php echo $lampung['awal_pengisian']; ?></td>
+                          <td><?php echo $lampung['masa_aktif']; ?></td>
+                          <td><?php echo $lampung['status']; ?></td>
                         </tr>
                         <?php
                         }
