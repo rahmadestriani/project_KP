@@ -37,6 +37,7 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+        <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
         <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
@@ -64,26 +65,7 @@
             <h2 class="text-center">AREA JAMBI</h2>
             <table class="table table-striped table-bordered table-condensed">
                       
-                      <tbody>
-                        <?php
-                        include_once ("../koneksi.php");
-
-                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
-                        $hasil = mysqli_query ($koneksi,$query);
-
-                        $no = 1;
-
-                        if (!$hasil)
-                          die ("Permintaan gagal!!!");
-
-                        while ($jambi=mysqli_fetch_array($hasil))
-                        {
-                        ?>
-                       
-                        <?php
-                        }
-                        ?>
-                      </tbody>
+                    
             </table>
             <center>
                 <a href="pra_jambi.php" class="btn btn-lg btn-info">Prabayar</a>

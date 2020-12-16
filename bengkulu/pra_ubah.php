@@ -2,19 +2,17 @@
   include ('../koneksi.php');
   $no_jaringan = $_GET ['no_jaringan'];
 
-    $query = "SELECT * FROM rekap_kartu where no_jaringan='$no_jaringan'";
+    $query = "SELECT * FROM bengkulu_pra where no_jaringan='$no_jaringan'";
     $hasil = mysqli_query ($koneksi, $query);
 
     $bengkulu=mysqli_fetch_array($hasil);
     $pelanggan = $bengkulu['pelanggan'];
     $lokasi = $bengkulu['lokasi'];
-    $area = 'bengkulu';
     $provider = $bengkulu['provider'];
     $no_kartu= $bengkulu['no_kartu'];
-    $jenis_provider= $bengkulu['jenis_provider'];
     $status_layanan= $bengkulu['status_layanan'];
     $perangkat= $bengkulu['perangkat'];
-    $awal_pengisian= $bengkulu['awal_pengisian'];;
+    $awal_pengisian= $bengkulu['awal_pengisian'];
     $awal_pengisian= date('Y-m-d', strtotime($awal_pengisian));
     $masa_aktif= date('Y-m-d', strtotime('+1 month', strtotime($awal_pengisian)));
     $status= $bengkulu['status'];
@@ -59,7 +57,7 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
-        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
+        <a href="index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -73,7 +71,7 @@
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
               
-              <div class="dropdown"></div><a href="logout.php" class="dropdown-item">Logout</a>
+              <div class="dropdown"></div><a href="../logout.php" class="dropdown-item">Logout</a>
             </div>
           </li>
         </ul>
@@ -91,11 +89,11 @@
                   </div>
                   <div class="card-body">
 
-                    <form role="form" action="bengkulu_simpan.php" method="POST">
+                    <form role="form" action="pra_update.php" method="POST">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Jaringan</label>
                         <div class="col-md-9">
-                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>">
+                          <input name="no_jaringan" type="text" class="form-control" value="<?php echo $no_jaringan; ?>" readonly>
                         </div>
                       </div>
 
@@ -128,25 +126,12 @@
                         </div>
                     </div>
 
-                     <div class="form-group row">
+					           <div class="form-group row">
                         <label class="col-md-3 form-control-label">No Kartu</label>
                         <div class="col-md-9">
                           <input name="no_kartu" type="text" class="form-control" value="<?php echo $no_kartu; ?>">
                         </div>
                       </div>
-
-
-                      <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Jenis Provider</label>
-                        <div class="col-md-9 select mb-3">
-                           <select name="jenis_provider" class="form-control" onchange="if (this.selectedIndex==1){document.getElementById('tampil_tanggal').style.display= 'inline' } else { document.getElementById('tampil_tanggal').style.display = 'none' };">
-
-                            <option value="Pascabayar">Pascabayar</option>
-                            <option value="Prabayar">Prabayar</option>
-                            
-
-                          </select>
-                        </div></div>
 
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Status Layanan</label>
@@ -178,27 +163,25 @@
                             <option <?php echo ($status == 'Standby') ? "selected": "" ?>>Standby</option>
                           </select>
                     </div>
-                  </div>
-                  <span id="tampil_tanggal" style="display: none;">
+                	</div>
+
                   <div class="form-group row">
-                       
                         <label class="col-md-3 form-control-label">Awal Pengisian Kuota</label>
                         <div class="col-md-9">
-                          <input type="date" class="form-control">
+                        <input name="awal_pengisian" type="date" class="form-control" value="<?php echo $awal_pengisian; ?>">
                         </div>
                       </div>
-                    </span>
 
                
                         <center>
-                          <a href="bengkulu.php" class="btn btn-secondary">Cancel</a>
+                          <a href="pra_bengkulu.php" class="btn btn-secondary">Cancel</a>
                           <button type="submit" class="btn btn-success">Save</button>
                         </center>
 
                     </form>
                 </div>
               </div>
-              </div>  
+              </div>	
         </section>
 
            
