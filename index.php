@@ -105,7 +105,7 @@
               </div>
 
               <div class="col-lg-4 mb-4 mb-lg-0">
-                 <a href="bengkulu/bengkulu.php" class="card bg-hover-gradient-red">
+                 <a href="bengkulu/pilih_prapasca.php" class="card bg-hover-gradient-red">
                   <div class="content d-flex flex-column justify-content-between p-4">
                    
                       <div class="text-uppercase">

@@ -62,14 +62,33 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <h2 class="text-center">AREA JAMBI</h2>
+            <h2 class="text-center">AREA BENGKULU</h2>
             <table class="table table-striped table-bordered table-condensed">
                       
-                    
+                      <tbody>
+                        <?php
+                        include_once ("../koneksi.php");
+
+                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
+                        $hasil = mysqli_query ($koneksi,$query);
+
+                        $no = 1;
+
+                        if (!$hasil)
+                          die ("Permintaan gagal!!!");
+
+                        while ($plg=mysqli_fetch_array($hasil))
+                        {
+                        ?>
+                       
+                        <?php
+                        }
+                        ?>
+                      </tbody>
             </table>
             <center>
-                <a href="pra_jambi.php" class="btn btn-lg btn-info">Prabayar</a>
-                <a href="pasca_jambi.php" class="btn btn-lg btn-info">Pascabayar</a>
+                <a href="pra_bengkulu.php" class="btn btn-lg btn-info">Prabayar</a>
+                <a href="pasca_bengkulu.php" class="btn btn-lg btn-info">Pascabayar</a>
             </center>
 
         </section>
