@@ -40,14 +40,6 @@
         <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
         <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
-          <li class="nav-item">
-            <form id="searchForm" class="ml-auto d-none d-lg-block">
-              <div class="form-group position-relative mb-0">
-                <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
-                <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
-              </div>
-            </form>
-          </li>
           
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
@@ -63,7 +55,7 @@
         <div class="container-fluid px-xl-5">
           <section class="py-5">
             <h2 class="text-center">AREA PALEMBANG</h2>
-            <table class="table table-striped table-bordered table-condensed">
+            <table class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr class="text-center">
                           <th>NO</th>
@@ -122,7 +114,9 @@
                         }
                         ?>
                       </tbody>
+                      
             </table>
+
             <center>
                 <a href="pra_form.php" class="btn btn-lg btn-info">Add</a>
                 <a href="pra_export.php" class="btn btn-lg btn-info">Export</a>
