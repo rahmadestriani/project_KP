@@ -20,5 +20,5 @@
 	if (!$hasil){
 		die("Penyimpanan gagal!!!");
 	}
-	header('location:pra_bengkulu.php');		
+header('location:pra_bengkulu.php');		
 ?>
