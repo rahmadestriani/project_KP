@@ -1,3 +1,25 @@
+
+<?php
+// biasoke koneksi selalu di pucuk sekali <<
+include_once ("../koneksi.php");
+
+
+// Ini kalo di kolom silahkan cari itu dimasukkan, dio bakan masuk ke if pertamo, kalo kosong dio bakal masuk ke else, yang dimano idak mencari apo apo
+if(isset($_GET['cari']))
+{
+    $data = mysqli_query($koneksi,"SELECT * FROM lampung_pasca where no_jaringan like '%$_GET[cari]%' OR pelanggan like '%$_GET[cari]%' OR lokasi like '%$_GET[cari]%' OR provider like '%$_GET[cari]%' OR no_kartu like '%$_GET[cari]%' OR status_layanan like '%$_GET[cari]%' OR perangkat like '%$_GET[cari]%'");
+    $last_search = $_GET['cari']; // ini kodingan kalo kato yang dicari tadi masuk ke variabel last_search untuk jadi pengingat apo yang kito cari di kolom pencarian agek
+}
+else
+{
+    $data = mysqli_query($koneksi,"SELECT * FROM lampung_pasca");
+    $last_search = '';
+}
+
+$banyak = mysqli_num_rows($data);
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,9 +62,6 @@
         <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
         <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
-          <li class="nav-item">
-          
-          </li>
           
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
@@ -58,6 +77,29 @@
         <div class="container-fluid px-xl-5">
           <section class="py-5">
             <h2 class="text-center">AREA LAMPUNG</h2>
+
+               <form action="pasca_lampung.php" method="get" style="text-align: right;">
+
+                 <input class="form-control-sm" type="text" name="cari" value="<?php echo $last_search; ?>" placeholder="Silahkan Cari">
+
+                 <input type="Submit" class="btn btn-sm btn-info" value="cari">
+                 <!-- tambah tombol reset -->
+                 <a class="btn btn-sm btn-warning" href="pasca_lampung.php">X</a>
+              </form>
+              <br>
+
+<!-- Kodingan ini untuk memberitahu jika data yang dicari tidak ada maka akan keluar notifikasi -->
+<?php if(mysqli_num_rows($data) == 0){ ?>
+<div class="alert alert-danger" role="alert">
+  Maaf kata <b><?php echo $last_search; ?></b> yang anda cari tidak ditemukan!
+</div>
+<?php
+}
+else
+{ 
+  ?>
+
+
             <table class="table table-striped table-bordered table-condensed">
                       <thead>
                         <tr class="text-center">
@@ -75,19 +117,18 @@
                       </thead>
                       <tbody>
                         <?php
-                        include_once ("../koneksi.php");
-
-                        $query = "SELECT * FROM lampung_pasca";
-                        $hasil = mysqli_query ($koneksi,$query);
 
                         $no = 1;
 
-                        if (!$hasil)
+
+                        if (!$data)
                           die ("Permintaan gagal!!!");
 
-                        while ($lampung=mysqli_fetch_array($hasil))
+                        while ($lampung=mysqli_fetch_array($data))
+
                         {
                         ?>
+
                         <tr>
                           <td><?php echo $no++?></td>
                           <td><?php echo $lampung['no_jaringan']; ?></td>
@@ -116,6 +157,7 @@
                         ?>
                       </tbody>
             </table>
+          <?php } ?>
             <center>
                 <a href="pasca_form.php" class="btn btn-lg btn-info">Add</a>
                 <a href="pasca_export.php" class="btn btn-lg btn-info">Export</a>
