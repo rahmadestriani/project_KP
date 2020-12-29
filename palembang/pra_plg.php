@@ -66,6 +66,24 @@ $banyak = mysqli_num_rows($data);
           <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
             <div aria-labelledby="notifications" class="dropdown-menu">
 
+                    <style type="text/css">
+                      .bg-yellow {
+                        background-color: #ffc107;
+                      }
+
+                      .bg-orange {
+                        background-color: #ff781f;
+                      }
+
+                      a.bg-yellow:hover, a.bg-yellow:focus{
+                        background-color: #ffc107;
+                      }
+
+                      a.bg-orange:hover, a.bg-orange:focus {
+                        background-color: #ff781f;
+                      }
+                    </style>
+
                       <?php
                       include_once ("../koneksi.php");
 
@@ -77,23 +95,33 @@ $banyak = mysqli_num_rows($data);
                       $tanggal_akhir_kontrak = $notif['masa_aktif'];   
                       $no_jaringan = $notif['no_jaringan'];
                       ?>
+
                       <?php
                       $tanggal_akhir = new DateTime($tanggal_akhir_kontrak); 
                       $tanggal_now = new DateTime();
+                      
                       $lama = $tanggal_now->diff($tanggal_akhir);
-                      if ($lama->days <= 5 AND $lama->days > 3) {
+                      if ($lama->days <= 15 AND $lama->days > 10) {
                       ?>
                       <a href="#" class="dropdown-item mb-2 bg-yellow">
-                      <div class="bg-yellow">
+                      <div>
                           <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
-                      </div></a>
-                    
+                      </div></a>              
                      <?php
                        }
-                       if($lama->days <= 3 AND $lama->days >= 0){
-                       ?>
 
-                        <a href="#" class="dropdown-item mb-2 bg-red">
+                      if ($lama->days <= 10 AND $lama->days > 5) {
+                      ?>
+                      <a href="#" class="dropdown-item mb-2 bg-orange">
+                      <div>
+                          <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
+                      </div></a>              
+                     <?php
+                       }
+
+                       if($lama->days <= 5 AND $lama->days >= 0){
+                       ?>
+                       <a href="#" class="dropdown-item mb-2 bg-red">
                       <div>
                           <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
                       </div></a>
