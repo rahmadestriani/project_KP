@@ -62,6 +62,73 @@ $banyak = mysqli_num_rows($data);
         <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
         <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+
+          <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
+            <div aria-labelledby="notifications" class="dropdown-menu">
+
+                    <style type="text/css">
+                      .bg-yellow {
+                        background-color: #ffc107;
+                      }
+
+                      .bg-orange {
+                        background-color: #ff781f;
+                      }
+
+                      a.bg-yellow:hover, a.bg-yellow:focus{
+                        background-color: #ffc107;
+                      }
+
+                      a.bg-orange:hover, a.bg-orange:focus {
+                        background-color: #ff781f;
+                      }
+                    </style>
+
+                      <?php
+                      include_once ("../koneksi.php");
+
+                      $querynotif = "SELECT * FROM bengkulu_pra";
+                      $querydatanotif = mysqli_query($koneksi, $querynotif);
+                      if(mysqli_num_rows($querydatanotif)>0){
+                      while($notif = mysqli_fetch_array($querydatanotif)){
+                      $nama_kar_notif = $notif['pelanggan'];
+                      $tanggal_akhir_kontrak = $notif['masa_aktif'];   
+                      $no_jaringan = $notif['no_jaringan'];
+                      ?>
+
+                      <?php
+                      $tanggal_akhir = new DateTime($tanggal_akhir_kontrak); 
+                      $tanggal_now = new DateTime();
+                      
+                      $lama = $tanggal_now->diff($tanggal_akhir);
+                      if ($lama->days <= 15 AND $lama->days > 10) {
+                      ?>
+                      <a href="#" class="dropdown-item mb-2 bg-yellow">
+                      <div>
+                          <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
+                      </div></a>              
+                     <?php
+                       }
+
+                      if ($lama->days <= 10 AND $lama->days > 5) {
+                      ?>
+                      <a href="#" class="dropdown-item mb-2 bg-orange">
+                      <div>
+                          <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
+                      </div></a>              
+                     <?php
+                       }
+
+                       if($lama->days <= 5 AND $lama->days >= 0){
+                       ?>
+                       <a href="#" class="dropdown-item mb-2 bg-red">
+                      <div>
+                          <p style="text-align: center;">Masa Aktif Pelanggan <b><?php echo $nama_kar_notif;?></b> dengan no jaringan <b><?php echo $no_jaringan;?></b> akan habis <b><?php echo "$lama->d"?></b> hari lagi</p>
+                      </div></a>
+                          <?php }
+                          }
+                          } ?>
+          </li>
           
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
