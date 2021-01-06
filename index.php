@@ -40,7 +40,7 @@
         <a href="index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/logo.png" style="max-width: 3.0rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu">
               
               <div class="dropdown"></div><a href="logout.php" class="dropdown-item">Logout</a>
