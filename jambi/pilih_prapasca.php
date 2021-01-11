@@ -58,10 +58,7 @@
         <div class="container-fluid px-xl-5">
           <section class="py-5">
             <h2 class="text-center">AREA JAMBI</h2>
-            <table class="table table-striped table-bordered table-condensed">
-                      
-                    
-            </table>
+            
             <center>
                 <a href="pra_jambi.php" class="btn btn-lg btn-info">Prabayar</a>
                 <a href="pasca_jambi.php" class="btn btn-lg btn-info">Pascabayar</a>
