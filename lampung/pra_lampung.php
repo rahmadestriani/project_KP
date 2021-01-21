@@ -80,7 +80,7 @@ $banyak = mysqli_num_rows($data);
                       }
 
                       a.bg-orange:hover, a.bg-orange:focus {
-                        background-color: #ff781f;
+                          background-color: #ff781f;
                       }
                     </style>
 
