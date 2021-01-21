@@ -37,7 +37,7 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
-        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
+        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -175,7 +175,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
+                <p class="mb-2 mb-md-0">TRIIS - 2021</p>
               </div>
               <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>
