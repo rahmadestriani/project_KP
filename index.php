@@ -37,6 +37,7 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+        <img src="img/logo.png" width="60">
         <a href="index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           
