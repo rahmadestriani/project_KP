@@ -54,15 +54,9 @@
 
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
-        <a href="index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
+        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
-            <form id="searchForm" class="ml-auto d-none d-lg-block">
-              <div class="form-group position-relative mb-0">
-                <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
-                <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
-              </div>
-            </form>
           </li>
           
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
@@ -181,7 +175,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
+                <p class="mb-2 mb-md-0">TRIIS - 2021</p>
               </div>
               <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>

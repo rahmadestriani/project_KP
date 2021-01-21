@@ -38,7 +38,7 @@
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
         <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
-        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">REKAN</a>
+        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
@@ -55,29 +55,7 @@
         <div class="container-fluid px-xl-5">
           <section class="py-5">
             <h2 class="text-center">AREA PALEMBANG</h2>
-            <table class="table table-striped table-bordered table-condensed">
-                      
-                      <tbody>
-                        <?php
-                        include_once ("../koneksi.php");
-
-                        $query = "SELECT * FROM rekap_kartu where area='palembang'";
-                        $hasil = mysqli_query ($koneksi,$query);
-
-                        $no = 1;
-
-                        if (!$hasil)
-                          die ("Permintaan gagal!!!");
-
-                        while ($plg=mysqli_fetch_array($hasil))
-                        {
-                        ?>
-                       
-                        <?php
-                        }
-                        ?>
-                      </tbody>
-            </table>
+            
             <center>
                 <a href="pra_plg.php" class="btn btn-lg btn-info">Prabayar</a>
                 <a href="pasca_plg.php" class="btn btn-lg btn-info">Pascabayar</a>
@@ -89,7 +67,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
+                <p class="mb-2 mb-md-0">TRIIS - 2021</p>
               </div>
               <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>

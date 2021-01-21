@@ -40,7 +40,9 @@
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-5 col-lg-7 mx-auto mb-5 mb-lg-0">
-            <div class="pr-lg-5"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="" class="img-fluid"></div>
+            <div class="pr-lg-5">
+              <img src="img/logo.png" alt="" class="img-fluid" width="500" height="200">
+            </div>
           </div>
           <div class="col-lg-5 px-lg-4">
             <form id="loginForm" action="verif.php" class="mt-4" method="POST">
