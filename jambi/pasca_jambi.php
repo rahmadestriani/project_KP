@@ -63,12 +63,13 @@ $banyak = mysqli_num_rows($data);
         <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://www.lintasarta.net/wp-content/themes/lintasarta-theme/assets/img/logo.png" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu">
+           <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+          
+          
               
-              <div class="dropdown"></div><a href="logout.php" class="dropdown-item">Logout</a>
-            </div>
-          </li>
+              <a href="../logout.php" class="btn btn-danger"><i class="o-exit-1 fa-align-center"></i> Log Out</a>
+            
+        </ul>
         </ul>
       </nav>
     </header>
