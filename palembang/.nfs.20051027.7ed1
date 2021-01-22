@@ -46,16 +46,13 @@
     <header class="header">
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
         <a href="../index.php" class="sidebar-toggler text-blue-500 mr-4 mr-lg-5 lead"><i class="o-home-1 fa-align-center"></i></a>
-        
-        <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
-          
-          <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+        <a href="../index.php" class="navbar-brand font-weight-bold text-uppercase text-base">TRIIS</a>
+       <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           
           
               
               <a href="../logout.php" class="btn btn-danger"><i class="o-exit-1 fa-align-center"></i> Log Out</a>
             
-        </ul>
         </ul>
       </nav>
     </header>
@@ -63,11 +60,11 @@
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <section class="py-5">
-            <h2 class="text-center">AREA BABEL</h2>
+            <h2 class="text-center">AREA PALEMBANG</h2>
             
             <center>
-                <a href="pra_babel.php" class="btn btn-lg btn-info">Prabayar</a>
-                <a href="pasca_babel.php" class="btn btn-lg btn-info">Pascabayar</a>
+                <a href="pra_plg.php" class="btn btn-lg btn-info">Prabayar</a>
+                <a href="pasca_plg.php" class="btn btn-lg btn-info">Pascabayar</a>
             </center>
 
         </section>
